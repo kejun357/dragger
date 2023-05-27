@@ -10,6 +10,7 @@
                         :class="$style.logo"
                         src="https://vue-json-schema-form.lljj.me/logo.png"
                         alt="Vue JSON Schema Form"
+                        height="20px"
                     >
                 </a>
             </h1>
@@ -104,7 +105,7 @@ export default {
         }
         .logo {
             display: block;
-            height: 25px;
+            height: 25px !important;
         }
     }
     .menu {

@@ -7,7 +7,7 @@
         }"
         @click="handleClickView"
     >
-        <span :class="$style.formProperty"> {{ attrs.curNodePath }}</span>
+<!--        <span :class="$style.formProperty"> {{ attrs.curNodePath }}</span>-->
         <div
             v-if="editorItem.isEdit"
             :class="$style.editBar"

@@ -5,7 +5,7 @@
             type="primary"
             @click="$emit('toDemo')"
         >
-            在 Playground 页验证
+            在 Playground 页验证0
         </el-button>
         <JsonPrettyPrint :json-string="genCode"></JsonPrettyPrint>
     </div>

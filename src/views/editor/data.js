@@ -17,6 +17,7 @@ function getComponentMap(configTools) {
 
     // 注册组件结构
     return componentList.reduce((preVal, componentItem) => {
+        console.log(componentItem)
         preVal[componentItem.componentPack.propsSchema.id] = componentItem;
         return preVal;
     }, {});

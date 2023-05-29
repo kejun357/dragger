@@ -19,7 +19,9 @@
                 flexBasis: item.componentValue.baseValue.uiOptions.width
             } : {}"
         >
+          {{item}}
             <ViewComponentWrap
+                v-if="!item.componentPack.componentViewName"
                 :form-data="formData"
                 :editor-item="item"
                 :drag-options="dragOptions"
@@ -28,6 +30,13 @@
                 @onOperate="handleItemOperate"
             >
             </ViewComponentWrap>
+321321321{{item.componentPack.componentViewName}}
+          <component
+              v-if="item.componentPack.componentViewName"
+              :is="item.componentPack.componentViewName"
+              :form-data="item.componentValue"
+          >
+          </component>
         </div>
         <template slot="footer">
             <slot></slot>
@@ -39,6 +48,7 @@
 import Draggable from 'vuedraggable';
 import * as arrayMethods from '@/utils/array';
 import { generateEditorItem } from '../common/editorData';
+import Vue from "vue";
 
 // 避免循环依赖导致undefined
 const ViewComponentWrap = () => import('./ViewComponentWrap');
@@ -70,9 +80,15 @@ export default {
     watch: {
         childComponentList() {
             this.computedComponentToolBarStatus();
-        }
+        },
+    },
+    computed: {
+      /*childComponentList() {
+        console.log(val)
+      }*/
     },
     created() {
+      console.log(this.childComponentList)
     },
     methods: {
         showNestedEditor(editorItem) {
@@ -84,6 +100,10 @@ export default {
         // 计算各个组件状态栏按钮状态
         computedComponentToolBarStatus() {
             this.childComponentList.forEach((component, componentIndex) => {
+                console.log(component.componentPack.component)
+              /*if(component.componentViewName) {
+                Vue.component(component.componentViewName, component.componentPack.component)
+              }*/
                 Object.assign(component.toolBar, {
                     moveUpDisabled: componentIndex === 0, // 是否可上移动
                     moveDownDisabled: componentIndex === this.childComponentList.length - 1, // 是否可下移

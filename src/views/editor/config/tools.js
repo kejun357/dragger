@@ -16,6 +16,7 @@ import componentPackBooleanRadio from '../viewComponents/SelectBoolean/elRadio';
 
 // 单多选
 import componentPackRadio from '../viewComponents/SingleSelect/elRadio';
+import componentPackRadioBtn from '../viewComponents/SingleSelect/elRadioBtn';
 import componentPackRadioSelect from '../viewComponents/SingleSelect/elSelect';
 
 import componentPackMultiSelect from '../viewComponents/MultiSelect/elSelect';
@@ -61,7 +62,7 @@ const tools = [
     {
         groupName: '布局组件',
         componentList: [{
-            title: 'Object',
+            title: '卡片布局',
             btnClass: 'w100',
             componentPack: componentPackObject
         }, {
@@ -71,9 +72,9 @@ const tools = [
         }]
     },
     {
-        groupName: '基础组件',
+        groupName: '业务属性',
         componentList: [{
-            title: '输入框',
+            title: '租户',
             componentPack: componentPackInput
         }, {
             title: '数字(slider)', // 这里顺便必须在 componentPackInputNumber 前，导入匹配的时候优先匹配
@@ -106,7 +107,7 @@ const tools = [
         groupName: '单选/多选',
         componentList: [{
             title: '单选(Radio)',
-            componentPack: componentPackRadio
+            componentPack: componentPackRadioBtn
         }, {
             title: '单选(Select)',
             componentPack: componentPackRadioSelect

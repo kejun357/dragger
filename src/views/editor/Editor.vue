@@ -1,13 +1,13 @@
 <template>
     <div v-loading="loading">
         <EditorHeader default-active="4">
-            <el-button @click="handleImportSchema">导入Schema</el-button>
+<!--            <el-button @click="handleImportSchema">导入Schema</el-button>
             <el-button
                 plain
                 @click="handleToDemo"
             >
                 Playground中验证
-            </el-button>
+            </el-button>-->
             <el-button
                 type="primary"
                 plain
@@ -19,7 +19,7 @@
                 type="primary"
                 @click="handleExportSchema"
             >
-                导出Schema
+                保存
             </el-button>
         </EditorHeader>
 

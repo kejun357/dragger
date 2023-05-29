@@ -1,24 +1,11 @@
 <template>
     <div :class="$style.box">
         <div :class="$style.headerMenuBox">
-            <h1>
-                <a
-                    :class="$style.menuLink"
-                    href="https://vue-json-schema-form.lljj.me/"
-                >
-                    <img
-                        :class="$style.logo"
-                        src="https://vue-json-schema-form.lljj.me/logo.png"
-                        alt="Vue JSON Schema Form"
-                        height="20px"
-                    >
-                </a>
-            </h1>
-            <Menu
+<!--            <Menu
                 :class="$style.menu"
                 :version="version"
                 v-bind="$attrs"
-            ></Menu>
+            ></Menu>-->
         </div>
         <div :class="$style.btns">
             <el-select
@@ -83,7 +70,7 @@ export default {
     .box {
         position: relative;
         margin: 0 auto;
-        padding: 0 2%;
+        padding: 10px 2%;
         height: auto;
         background: var(--color-white);
         display: flex;
@@ -101,7 +88,7 @@ export default {
             font-size: 26px;
             text-transform: uppercase;
             z-index: 10;
-            margin: 0;
+            margin: 10px 0;
         }
         .logo {
             display: block;

@@ -5,7 +5,7 @@
 import genSchema from '../genSchema.js';
 
 const viewSchema = {
-    title: 'Object',
+    title: '卡片',
     type: 'object',
     required: [],
     properties: {},

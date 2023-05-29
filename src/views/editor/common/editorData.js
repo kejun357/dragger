@@ -9,7 +9,7 @@ import { isObject, isEmptyObject } from './utils';
 // 生成一个新的editor item
 export function generateEditorItem(toolItem) {
     const currentComponentPack = toolItem.componentPack;
-
+console.log(currentComponentPack)
     const ids = [currentComponentPack.viewSchema.format, currentComponentPack.viewSchema.type, genId()];
     const id = ids.filter(item => !!item).join('_');
 
@@ -30,6 +30,7 @@ export function generateEditorItem(toolItem) {
             ) : toolItem.componentValue,
             property: (toolItem.componentValue && toolItem.componentValue.property) || id
         },
+        componentViewName: toolItem.componentPack.componentViewName,
         id,
         ...(currentComponentPack.viewSchema.properties || (currentComponentPack.viewSchema.items && currentComponentPack.viewSchema.items.properties))
             ? { childList: [] }

@@ -117,7 +117,7 @@
                             label="表单配置"
                             name="formConfig"
                         >
-<!--                            <VueJsonFrom
+                            <VueJsonFrom
                                 v-model="formConfig"
                                 :class="$style.configForm"
                                 :schema="FormConfSchema"
@@ -129,7 +129,7 @@
                                     show: false
                                 }"
                             >
-                            </VueJsonFrom>-->
+                            </VueJsonFrom>
                         </el-tab-pane>
                     </el-tabs>
                 </div>
@@ -250,7 +250,7 @@ export default {
                 }
                 return pre;
             }, {});
-
+            console.log(this.componentList)
             return {
                 schema: componentList2JsonSchema(this.componentList),
                 uiSchema: {},

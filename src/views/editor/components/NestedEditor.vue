@@ -19,6 +19,7 @@
                 flexBasis: item.componentValue.baseValue.uiOptions.width
             } : {}"
         >
+          {{formProps}}
             <ViewComponentWrap
                 :inline="true"
                 :form-data="formData"

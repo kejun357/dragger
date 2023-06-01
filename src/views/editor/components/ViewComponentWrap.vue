@@ -57,7 +57,7 @@
             v-if="!editorItem.componentPack.component"
         >
         </SchemaField>
-
+{{editorItem}}
         <NestedEditor
             v-if="showNestedEditor(editorItem)"
             :child-component-list="editorItem.childList"

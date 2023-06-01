@@ -28,7 +28,7 @@ console.log(currentComponentPack)
                 {}, // 初始值为空
                 currentComponentPack.propsSchema
             ) : toolItem.componentValue,
-            property: (toolItem.componentValue && toolItem.componentValue.property) || id
+            property: (toolItem.componentValue && toolItem.componentValue.property) || toolItem.code || id
         },
         componentViewName: toolItem.componentPack.componentViewName,
         id,
@@ -74,6 +74,7 @@ function filterObj(obj, filter = (key, value) => (isObject(value) && !isEmptyObj
 }
 
 export function editorItem2SchemaFieldProps(editorItem, formData) {
+    console.log(editorItem)
     // baseValue
     const {
         schemaOptions: baseSchemaOptions,
@@ -162,7 +163,8 @@ export function editorItem2SchemaFieldProps(editorItem, formData) {
             'ui:options': mergeUiOptions
         }
     };
-
+    schema.title = editorItem.title;
+    console.log(uiSchema)
     return {
         rootSchema: schema,
         schema,

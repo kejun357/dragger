@@ -12,21 +12,6 @@ function genBaseVal(type = 'string', isMultiSelect = false) {
             schemaOptions: {
                 type: 'object',
                 properties: {
-                    title: {
-                        title: '标题',
-                        type: 'string',
-                        'ui:placeholder': '请输入表单项标题',
-                        'err:required': '请输入标题'
-                    },
-                    description: {
-                        title: '描述',
-                        type: 'string',
-                        'ui:options': {
-                            placeholder: '请输入表单项描述，支持输入html',
-                            type: 'textarea',
-                            rows: 3,
-                        }
-                    },
                     ...!['array', 'object'].includes(type) ? {
                         default: {
                             title: '默认值',
@@ -57,26 +42,10 @@ function genBaseVal(type = 'string', isMultiSelect = false) {
                 type: 'object',
                 properties: {
                     ...!['array', 'object'].includes(type) || isMultiSelect ? {
-                        width: {
-                            title: '宽度',
-                            type: 'string',
-                            description: '请输入style width 支持的格式，<br />比如<strong style="font-weight: bold;">10%、100px</strong>等，推荐百分比单位',
-                            'ui:placeholder': '请输入FormItem宽度'
-                        },
-                        labelWidth: {
-                            title: '标签宽度',
-                            type: 'number',
-                            'ui:widget': 'ElSlider',
-                            'ui:options': {
-                                formatTooltip(val) {
-                                    return formatFormLabelWidth(val);
-                                }
-                            }
-                        },
                         required: {
                             title: '必填',
                             type: 'boolean',
-                            default: false
+                            default: true
                         },
                         disabled: {
                             title: '禁用',
@@ -84,7 +53,7 @@ function genBaseVal(type = 'string', isMultiSelect = false) {
                             default: false
                         }
                     } : {
-                        showTitle: {
+                        /*showTitle: {
                             title: '显示标题',
                             type: 'boolean',
                             default: true,
@@ -95,7 +64,7 @@ function genBaseVal(type = 'string', isMultiSelect = false) {
                             type: 'boolean',
                             default: true,
                             'ui:widget': 'el-switch'
-                        }
+                        }*/
                     },
                 }
             }
@@ -108,8 +77,9 @@ export default (schema, type, isMultiSelect) => ({
     required: ['property'],
     properties: {
         property: {
-            title: '属性名',
+            title: 'code',
             type: 'string',
+            'ui:disabled': true,
             'ui:placeholder': '请输入属性名',
             'err:required': '属性名必填'
         },

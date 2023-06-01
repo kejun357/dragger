@@ -17,7 +17,7 @@ export default function genIdFn() {
         }
 
         preKey = curTimestamp;
-        return `${preKey}x${key}`;
+        return `${preKey}x${key}11111`;
     };
 }
 

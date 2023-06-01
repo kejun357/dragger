@@ -4,6 +4,7 @@
 
 // 基础组件
 import componentPackInput from '../viewComponents/Input';
+import componentPackTextArea from '../viewComponents/Description'
 import componentPackColor from '../viewComponents/Color';
 import componentPackInputNumber from '../viewComponents/InputNumber';
 import componentPackSlider from '../viewComponents/Slider';
@@ -49,6 +50,7 @@ import componentPackDateTimeRangeString from '../viewComponents/DateTimeRange/st
 // 布局 Object Array
 import componentPackObject from '../viewComponents/Object';
 import componentPackArray from '../viewComponents/Array';
+import elRadioBtn from "../viewComponents/SingleSelect/elRadioBtn";
 
 /**
  * hidden 隐藏，不显示在工具栏
@@ -66,98 +68,98 @@ const tools = [
             btnClass: 'w100',
             componentPack: componentPackObject
         }, {
-            title: 'Array',
+            title: '步骤条',
             btnClass: 'w100',
-            componentPack: componentPackArray
+            componentPack: componentPackObject
         }]
     },
     {
         groupName: '业务属性',
         componentList: [{
             title: '租户',
-            componentPack: componentPackInput
+            code: 'tenantId',
+            btnClass: 'w100',
+            componentPack: componentPackRadio
         }, {
-            title: '数字(slider)', // 这里顺便必须在 componentPackInputNumber 前，导入匹配的时候优先匹配
-            componentPack: componentPackSlider
+            title: '描述',
+            btnClass: 'w100',
+            componentPack: componentPackTextArea
         }, {
-            title: '数字输入框',
-            componentPack: componentPackInputNumber
-        }, {
-            title: '颜色选择',
-            componentPack: componentPackColor
-        }]
-    },
-    {
-        groupName: '是否Bool',
-        componentList: [{
-            title: '是否(Switch)',
-            componentPack: componentPackBooleanSwitch
-        }, {
-            title: '是否(Checkbox)',
-            componentPack: componentPackBooleanCheckbox
-        }, {
-            title: '是否(Select)',
-            componentPack: componentPackBooleanSelect
-        }, {
-            title: '是否(Radio)',
-            componentPack: componentPackBooleanRadio
-        }]
-    },
-    {
-        groupName: '单选/多选',
-        componentList: [{
-            title: '单选(Radio)',
-            componentPack: componentPackRadioBtn
-        }, {
-            title: '单选(Select)',
+            title: '资源组',
+            btnClass: 'w100',
             componentPack: componentPackRadioSelect
         }, {
-            title: '多选(Select)',
-            componentPack: componentPackMultiSelect
+            title: '区域项目',
+            btnClass: 'w100',
+            componentPack: componentPackRadioSelect
         }, {
-            title: '多选(Checkbox)',
-            componentPack: componentPackMultiCheckbox
+            title: '资源标签',
+            btnClass: 'w100',
+            componentPack: componentPackRadioBtn
+        }, {
+            title: '计费模式',
+            btnClass: 'w100',
+            componentPack: componentPackRadio
         }]
     },
     {
-        groupName: '文件上传',
+        groupName: '资源属性',
         componentList: [{
-            title: '单文件',
-            componentPack: componentPackUpload
+            title: '云环境',
+            btnClass: 'w100',
+            componentPack: componentPackRadio
         }, {
-            title: '多个文件',
-            componentPack: componentPackMultiUpload
-        }]
-    },
-    {
-        groupName: '时间日期',
-        componentList: [{
-            title: 'Date(时间戳)',
-            componentPack: componentPackDate
+            title: '区域',
+            btnClass: 'w100',
+            componentPack: componentPackRadio
         }, {
-            title: 'Date(字符串)',
-            componentPack: componentPackDateString
+            title: '规格',
+            btnClass: 'w100',
+            componentPack: componentPackRadio
         }, {
-            title: 'DateTime(时间戳)',
-            componentPack: componentPackDateTime
+            title: '镜像',
+            btnClass: 'w100',
+            componentPack: componentPackRadioSelect
         }, {
-            title: 'DateTime(字符串)',
-            componentPack: componentPackDateTimeString
+            title: '系统盘',
+            btnClass: 'w100',
+            componentPack: componentPackObject
         }, {
-            title: 'Date范围(时间戳)',
-            componentPack: componentPackDateRange
+            title: '镜像类型',
+            btnClass: 'w100',
+            componentPack: componentPackRadioBtn
         }, {
-            title: 'Date范围(字符串)',
-            componentPack: componentPackDateRangeString
+            title: '数据盘',
+            btnClass: 'w100',
+            componentPack: componentPackRadioSelect
         }, {
-            title: 'DateTime范围(时间戳)',
-            componentPack: componentPackDateTimeRange
+            title: '专有网络',
+            btnClass: 'w100',
+            componentPack: componentPackRadioSelect
         }, {
-            title: 'DateTime范围(字符串)',
-            componentPack: componentPackDateTimeRangeString
+            title: '子网',
+            btnClass: 'w100',
+            componentPack: componentPackRadioSelect
         }, {
-            title: 'Time(字符串)',
-            componentPack: componentPackTime
+            title: '安全组',
+            btnClass: 'w100',
+            componentPack: componentPackRadioSelect
+        }, {
+            title: '登录方式',
+            btnClass: 'w100',
+            componentPack: componentPackRadioBtn
+        }, {
+            title: '登录名',
+            btnClass: 'w100',
+            componentPack: componentPackObject
+        }, {
+            title: '密码',
+            btnClass: 'w100',
+            componentPack: componentPackInput
+        }, {
+            title: '确认密码',
+            btnClass: 'w100',
+            componentPack: componentPackInput
         }]
     }
 ];

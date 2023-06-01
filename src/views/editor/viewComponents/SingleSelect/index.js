@@ -19,7 +19,8 @@ const selectOptionsSchema = {
         items: {
             title: '选项值',
             type: 'string'
-        }
+        },
+        'ui:hidden': true
     },
     enumNames: {
         title: '配置选项名称',
@@ -50,7 +51,9 @@ export default {
                     type: 'object',
                     properties: selectOptionsSchema
                 }
+
             },
+            'ui:hidden': true
         }
     })
 };

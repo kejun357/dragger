@@ -2,7 +2,7 @@
   <div>
     <div>
 <!--      <el-form :inline="true" :model="formInline" class="demo-form-inline">-->
-        <el-form-item label="租户">
+        <el-form-item>
           <el-radio-group v-model="cloudType" size="small">
             <el-radio-button
                 v-for="item in listData"

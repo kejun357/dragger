@@ -7,7 +7,11 @@ import baseRadio from './index';
 const viewSchema = {
     title: '单选(Radio)',
     type: 'string',
-    'ui:widget': 'RadioWidget'
+    'ui:widget': 'RadioWidget',
+    "ui:options": {
+        "buttonStyle": true
+    }
+
 };
 
 export default {

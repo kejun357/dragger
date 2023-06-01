@@ -43,7 +43,7 @@ export default {
                 labelPosition: {
                     title: '标签对其方式',
                     type: 'string',
-                    default: 'top',
+                    default: 'left',
                     enum: [
                         'left',
                         'right',

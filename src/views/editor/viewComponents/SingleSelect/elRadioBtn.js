@@ -6,13 +6,14 @@ import baseRadio from './index';
 import Vue from "vue";
 Vue.component('elRadioBtn', elRadioBtn)
 const viewSchema = {
-    title: '单选(Radio)',
+    title: '云环境',
     type: 'string'
 };
 
 export default {
     component: elRadioBtn,
     viewSchema,
+    elRadioBtn,
     componentViewName: 'elRadioBtn',
     propsSchema: baseRadio.propsSchema
 };

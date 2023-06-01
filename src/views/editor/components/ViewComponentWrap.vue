@@ -45,8 +45,16 @@
                 @click="$emit('onOperate', { item: editorItem, command: 'remove' })"
             ></button>
         </div>
+      dd
+      <slot name="componentView"></slot>
+      ff
+      <div>
+123
+      </div>
         <SchemaField
+            inline="true"
             v-bind="attrs"
+            v-if="!editorItem.componentPack.component"
         >
         </SchemaField>
 

@@ -19,9 +19,8 @@
                 flexBasis: item.componentValue.baseValue.uiOptions.width
             } : {}"
         >
-          {{item}}
             <ViewComponentWrap
-                v-if="!item.componentPack.componentViewName"
+                :inline="true"
                 :form-data="formData"
                 :editor-item="item"
                 :drag-options="dragOptions"
@@ -29,14 +28,14 @@
                 :form-props="formProps"
                 @onOperate="handleItemOperate"
             >
+              <component
+                  v-if="item.componentPack.componentViewName"
+                  :is="item.componentPack.componentViewName"
+                  slot="componentView"
+                  :inline="true"
+              >
+              </component>
             </ViewComponentWrap>
-321321321{{item.componentPack.componentViewName}}
-          <component
-              v-if="item.componentPack.componentViewName"
-              :is="item.componentPack.componentViewName"
-              :form-data="item.componentValue"
-          >
-          </component>
         </div>
         <template slot="footer">
             <slot></slot>
@@ -48,7 +47,7 @@
 import Draggable from 'vuedraggable';
 import * as arrayMethods from '@/utils/array';
 import { generateEditorItem } from '../common/editorData';
-import Vue from "vue";
+// import Vue from "vue";
 
 // 避免循环依赖导致undefined
 const ViewComponentWrap = () => import('./ViewComponentWrap');

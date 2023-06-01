@@ -52,6 +52,7 @@
                         style="height: 100%"
                         :model="rootFormData"
                         v-bind="formProps"
+                        :inline="true"
                         class="genFromComponent"
                         :class="{
                             layoutColumn: !formProps.inline,
@@ -116,7 +117,7 @@
                             label="表单配置"
                             name="formConfig"
                         >
-                            <VueJsonFrom
+<!--                            <VueJsonFrom
                                 v-model="formConfig"
                                 :class="$style.configForm"
                                 :schema="FormConfSchema"
@@ -128,7 +129,7 @@
                                     show: false
                                 }"
                             >
-                            </VueJsonFrom>
+                            </VueJsonFrom>-->
                         </el-tab-pane>
                     </el-tabs>
                 </div>
@@ -238,7 +239,7 @@ export default {
                     inline: false,
                     inlineFooter: false,
                     layoutColumn: 1,
-                    labelPosition: 'top',
+                    labelPosition: 'left',
                 }
             };
 
